@@ -6,7 +6,7 @@
 #    By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:22:38 by graja             #+#    #+#              #
-#    Updated: 2021/09/17 10:10:52 by graja            ###   ########.fr        #
+#    Updated: 2021/09/17 11:37:19 by graja            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ CC		= gcc
 FLAGS		= -Wall -Wextra -Werror
 LIBFT		= libft
 FLGFT		= -Llibft -lft
+APLFLG		= -Lminilibx -lmlx -framework OpenGL -framework AppKit
 FLGMLX		= -Lminilibx -lmlx -lXext -lX11 -lm
 MLX		= minilibx
 
@@ -27,6 +28,12 @@ $(NAME)		:	$(SRCS) $(MLX) $(COMMON) $(LIBFT)
 	make bonus -C $(LIBFT)
 	make -C $(MLX)
 	$(CC) $(SRCS) $(COMMON) $(FRACTALS) $(FLAGS) $(FLGMLX) $(FLGFT) -o $(NAME)
+
+apple		:	$(SRCS) $(MLX) $(COMMON) $(LIBFT)
+	make bonus -C $(LIBFT)
+	make -C $(MLX)
+	$(CC) $(SRCS) $(COMMON) $(FRACTALS) $(FLAGS) $(APLFLG) $(FLGFT) -o $(NAME)
+
 
 all		:	$(NAME)
 
