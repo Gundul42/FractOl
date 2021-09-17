@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/11 13:43:11 by graja             #+#    #+#             */
-/*   Updated: 2021/09/12 13:01:33 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 08:30:00 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ t_color	ft_getrgb_a(t_hsv in, t_hsv pqt, long i)
 {
 	t_color	out;
 
+	out.r = 0;
+	out.g = 0;
+	out.b = 0;
 	if (i == 0)
 	{
 		out.r = in.v;
