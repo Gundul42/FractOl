@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:37:54 by graja             #+#    #+#             */
-/*   Updated: 2021/09/16 18:35:53 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 08:08:51 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,12 @@ int	ft_mouse_move(int x, int y, void *p)
 	im = ft_getimg(y, f);
 	printf(">>>Re= %2.12f  -  Im= %2.12f  -", re, im);
 	printf("  Zo= %8.2f\n", f->zoom);
+	return (0);
 }
 
 int	ft_loop_hook(t_data *img)
 {
 	mlx_do_sync(img->mlx);
 	mlx_put_image_to_window(img->mlx, img->win, img->img, 0, 0);
+	return (0);
 }

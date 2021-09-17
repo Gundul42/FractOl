@@ -6,7 +6,7 @@
 #    By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:22:38 by graja             #+#    #+#              #
-#    Updated: 2021/09/16 19:41:25 by graja            ###   ########.fr        #
+#    Updated: 2021/09/17 08:12:13 by graja            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ COMMON		= common/colors.c common/draw.c common/ccalc.c common/init.c \
 		  common/sets.c common/cmdline.c
 FRACTALS	= fractals/mandel.c fractals/julia.c fractals/ship.c
 CC		= gcc
+FLAGS		= -Wall -Wextra -Werror
 LIBFT		= libft
 FLGFT		= -Llibft -lft
 FLGMLX		= -Lminilibx -lmlx -lXext -lX11 -lm
@@ -25,7 +26,7 @@ MLX		= minilibx
 $(NAME)		:	$(SRCS) $(MLX) $(COMMON) $(LIBFT)
 	make bonus -C $(LIBFT)
 	make -C $(MLX)
-	$(CC) $(SRCS) $(COMMON) $(FRACTALS) $(FLGMLX) $(FLGFT) -o $(NAME)
+	$(CC) $(SRCS) $(COMMON) $(FRACTALS) $(FLAGS) $(FLGMLX) $(FLGFT) -o $(NAME)
 
 all		:	$(NAME)
 
@@ -40,3 +41,4 @@ fclean		:	$(LIBFT) $(MLX)
 	rm -f $(MLX)/libmlx.a
 	rm -f $(MLX)/libmlx_$(shell uname).a
 	make fclean -C $(LIBFT)
+	make clean -C $(MLX)

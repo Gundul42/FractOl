@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 11:43:51 by graja             #+#    #+#             */
-/*   Updated: 2021/09/16 19:00:07 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 08:06:49 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int	main(int argc, char **argv)
 {
 	t_data	*img;
 
-	img = ft_blank(img);
+	img = ft_blank(NULL);
 	if (!ft_get_cmdline(argc, argv, img))
 		return (1);
 	img->mlx = mlx_init();
