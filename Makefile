@@ -6,7 +6,7 @@
 #    By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/28 18:22:38 by graja             #+#    #+#              #
-#    Updated: 2021/09/17 08:12:13 by graja            ###   ########.fr        #
+#    Updated: 2021/09/17 10:10:52 by graja            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= fractol
 SRCS		= main.c
 COMMON		= common/colors.c common/draw.c common/ccalc.c common/init.c \
 		  common/hsv2rgb.c common/rgb2hsv.c common/hooks.c \
-		  common/sets.c common/cmdline.c
+		  common/sets.c common/cmdline.c common/fractset.c
 FRACTALS	= fractals/mandel.c fractals/julia.c fractals/ship.c
 CC		= gcc
 FLAGS		= -Wall -Wextra -Werror

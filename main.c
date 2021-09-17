@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 11:43:51 by graja             #+#    #+#             */
-/*   Updated: 2021/09/17 08:06:49 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 10:40:24 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ void	ft_print_error(t_data *data, char **argv)
 	else
 	{
 		free(data);
-		printf("\nMissing or invalid arguments: %s", argv[0]);
-		printf(" (use arguments as described below) \n");
+		printf("\nMissing or invalid arguments:\n %s", argv[0]);
+		printf(" (chosing one fractal set is mandatory)\n\n");
 		printf("	-mandel	: shows Mandelbrot set\n");
 		printf("	-julia	: shows Julia set at");
-		printf(" <julia_real> <julia_img>\n");
+		printf(" [-jr][-ji]\n");
 		printf("	-jr	: real_part of julia konstant\n");
 		printf("	-ji 	: imaginary_part of julia konstant\n");
 		printf("	-ship	: shows Burning Ship set\n\n");
@@ -56,17 +56,18 @@ int	ft_get_cmdline(int argc, char **argv, t_data *f)
 	error = 0;
 	if (!f || argc < 2)
 		ft_print_error(f, argv);
-	ft_init_window(f, 900, 600, 1000);
 	while (i <= (argc - 1))
 	{
 		if (!f->type)
 			f->type = ft_cmd_fractal(argv[i]);
 		error = ft_cmd_resolution(f, argv[i]);
 		error = error && ft_cmd_julia(f, argv[i]);
-		if ((i > 1) && (!f->type || error))
+		if (((i > 1) || (argc == 2)) && (!f->type || error))
 			ft_print_error(f, argv);
 		i++;
 	}
+	printf("\nType: %d\n", f->type);
+	ft_init_window(f, 900, 600, 1000);
 	return (1);
 }
 

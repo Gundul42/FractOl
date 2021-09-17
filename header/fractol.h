@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 09:38:51 by graja             #+#    #+#             */
-/*   Updated: 2021/09/16 18:58:49 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 10:10:11 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,8 @@ int		ft_cmd_fractal(char *str);
 int		ft_cmd_resolution(t_data *data, char *str);
 int		ft_cmd_julia(t_data *data, char *str);
 t_data	*ft_blank(t_data *data);
+void	ft_init_ship(t_data *data);
+void	ft_init_julia(t_data *data);
+void	ft_init_mandel(t_data *data);
 
 #endif
