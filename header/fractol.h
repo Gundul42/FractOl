@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/29 09:38:51 by graja             #+#    #+#             */
-/*   Updated: 2021/09/17 10:10:11 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 13:15:07 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ t_color	ft_rgb2col(int t, int r, int g, int b);
 t_hsv	rgb2hsv(t_color in);
 t_color	hsv2rgb(t_hsv in);
 t_hsv	ft_interpolate_hsv(t_hsv col1, t_hsv col2, int i, int maxi);
-int		ft_mouse_move(int x, int y, void *p);
 int		ft_mouse_hook(int button, int x, int y, t_data *data);
 int		ft_key_hook(int code, t_data *data);
 int		ft_loop_hook(t_data *img);

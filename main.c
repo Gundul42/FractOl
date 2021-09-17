@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/28 11:43:51 by graja             #+#    #+#             */
-/*   Updated: 2021/09/17 10:40:24 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 18:07:00 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,11 @@ int	ft_get_cmdline(int argc, char **argv, t_data *f)
 			f->type = ft_cmd_fractal(argv[i]);
 		error = ft_cmd_resolution(f, argv[i]);
 		error = error && ft_cmd_julia(f, argv[i]);
-		if (((i > 1) || (argc == 2)) && (!f->type || error))
+		if (!f->type || (i > 1 && error))
 			ft_print_error(f, argv);
 		i++;
 	}
-	printf("\nType: %d\n", f->type);
-	ft_init_window(f, 900, 600, 1000);
+	ft_init_window(f, f->x, f->y, f->i);
 	return (1);
 }
 
@@ -84,14 +83,14 @@ int	main(int argc, char **argv)
 	img->breakpts = ft_init_colors();
 	img->palette = ft_init_palette(img);
 	img->win = mlx_new_window(img->mlx, img->x, img->y,
-			"Gundul's Fractol (beta v1.5)");
+			"Fractol V1.125 (c) Gundul");
 	img->img = mlx_new_image(img->mlx, img->x, img->y);
 	img->addr = mlx_get_data_addr(img->img, &img->bits_per_pixel,
 			&img->line_length, &img->endian);
 	ft_draw_fractal(img);
 	mlx_key_hook(img->win, ft_key_hook, img);
+	mlx_hook(img->win, 17, 1L << 2, the_end, img);
 	mlx_mouse_hook(img->win, ft_mouse_hook, img);
-	mlx_hook(img->win, 6, (1L << 6), ft_mouse_move, img);
 	mlx_loop_hook(img->mlx, ft_loop_hook, img);
 	mlx_loop(img->mlx);
 	return (0);

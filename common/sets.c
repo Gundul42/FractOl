@@ -6,7 +6,7 @@
 /*   By: graja <graja@student.42wolfsburg.de>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 17:07:05 by graja             #+#    #+#             */
-/*   Updated: 2021/09/17 10:28:09 by graja            ###   ########.fr       */
+/*   Updated: 2021/09/17 12:57:22 by graja            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,16 @@ t_data	*ft_blank(t_data *data)
 	data->line_length = 0;
 	data->endian = 0;
 	data->type = 0;
-	data->x = 0;
-	data->y = 0;
-	data->i = 0;
+	data->x = 900;
+	data->y = 600;
+	data->i = 500;
 	data->minreal = .0;
 	data->maxreal = .0;
 	data->minimg = .0;
 	data->maximg = .0;
 	data->juliareal = .0;
 	data->juliaimg = .0;
-	data->zoom = .0;
+	data->zoom = 1.0;
 	data->movex = .0;
 	data->movey = .0;
 	data->breakpts = NULL;
